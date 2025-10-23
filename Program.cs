@@ -1,4 +1,5 @@
 ﻿using CollectionsLibraryDemo;
+using System.Collections;
 
 internal class Program
 {
@@ -8,30 +9,56 @@ internal class Program
 
         //JaggedDemo();
 
-        StackWorking sw=new StackWorking();
-        sw.AddToStack(10);
-        sw.AddToStack(20.56f);
-        sw.AddToStack('H');
-        sw.AddToStack("Welcome");
+        //StackWorking sw=new StackWorking();
+        //sw.AddToStack(10);
+        //sw.AddToStack(20.56f);
+        //sw.AddToStack('H');
+        //sw.AddToStack("Welcome");
 
-        sw.Display();
-        sw.RemoveFromStack();
-        Console.WriteLine("---------------");
-        sw.Display();
-        Console.WriteLine("---");
-        object[] o=sw.ConvertToArray();
-        foreach (var item in o)
+        //sw.Display();
+        //sw.RemoveFromStack();
+        //Console.WriteLine("---------------");
+        //sw.Display();
+        //Console.WriteLine("---");
+        //object[] o=sw.ConvertToArray();
+        //foreach (var item in o)
+        //{
+        //    Console.WriteLine(item);
+        //}
+        //Console.WriteLine();
+        //object[]  showCopied=sw.CopyAll();
+        //Console.WriteLine("copied ...");
+        //foreach (var item in showCopied)
+        //{
+        //    Console.WriteLine(item);
+        //}
+
+
+        BitArray rooms = new BitArray(5);
+        //true means lights on
+        rooms[0] = true;
+        rooms[1] = true;
+        rooms[2] = false;
+        rooms[3] = true;
+        rooms[4] = false;
+
+        foreach (var item in rooms)
         {
             Console.WriteLine(item);
         }
+
+        BitArray rooms2 = new BitArray(5); 
+        rooms2[0] = false;
+        rooms.And(rooms2);
+
+        //rooms.Xor(rooms);
+        rooms.And(rooms);
+        Console.WriteLine("after and");
         Console.WriteLine();
-        object[]  showCopied=sw.CopyAll();
-        Console.WriteLine("copied ...");
-        foreach (var item in showCopied)
+        foreach (var item in rooms)
         {
             Console.WriteLine(item);
         }
-
 
     }
 
