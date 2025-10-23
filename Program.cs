@@ -34,30 +34,67 @@ internal class Program
         //}
 
 
-        BitArray rooms = new BitArray(5);
-        //true means lights on
-        rooms[0] = true;
-        rooms[1] = true;
-        rooms[2] = false;
-        rooms[3] = true;
-        rooms[4] = false;
+        //BitArray rooms = new BitArray(5);
+        ////true means lights on
+        //rooms[0] = true;
+        //rooms[1] = true;
+        //rooms[2] = false;
+        //rooms[3] = true;
+        //rooms[4] = false;
 
-        foreach (var item in rooms)
+        //foreach (var item in rooms)
+        //{
+        //    Console.WriteLine(item);
+        //}
+
+        //BitArray rooms2 = new BitArray(5); 
+        //rooms2[0] = false;
+        //rooms.And(rooms2);
+
+        ////rooms.Xor(rooms);
+        //rooms.And(rooms);
+        //Console.WriteLine("after and");
+        //Console.WriteLine();
+        //foreach (var item in rooms)
+        //{
+        //    Console.WriteLine(item);
+        //}
+
+        Hashtable ht = new Hashtable();
+        ht.Add(1, "one");
+        ht.Add(2, "two");
+        ht.Add(3, "three");
+        ht.Add(4, "four");
+        ht.Add(5, "five");
+        ht.Add(6, "six");
+        ht.Add(7, "seven");
+
+        ICollection ht_keys=ht.Keys;
+        ICollection ht_values=ht.Values;
+
+        foreach (var item in ht_keys)
         {
             Console.WriteLine(item);
         }
 
-        BitArray rooms2 = new BitArray(5); 
-        rooms2[0] = false;
-        rooms.And(rooms2);
 
-        //rooms.Xor(rooms);
-        rooms.And(rooms);
-        Console.WriteLine("after and");
-        Console.WriteLine();
-        foreach (var item in rooms)
+        foreach (var item in ht_values)
         {
             Console.WriteLine(item);
+        }
+
+
+        IDictionaryEnumerator ie=ht.GetEnumerator();
+        while (ie.MoveNext()) 
+        {
+            Console.WriteLine(ie.Key +  "   " + ie.Value);
+        }
+
+        Console.WriteLine("-------------------------");
+
+        foreach (DictionaryEntry item in ht)
+        {
+            Console.WriteLine(item.Key + " "+ item.Value);
         }
 
     }
